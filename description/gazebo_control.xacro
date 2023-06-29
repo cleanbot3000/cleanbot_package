@@ -4,6 +4,18 @@
     <gazebo>
         <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so"> 
 
+            <alwaysOn>true</alwaysOn>
+            <legacyMode>false</legacyMode>
+            <updateRate>40</updateRate>
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <wheelSeparation>0.35</wheelSeparation>
+            <wheelDiameter>0.1524</wheelDiameter>
+            <torque>200</torque>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <robotBaseFrame>base_link</robotBaseFrame>
             
             <!-- Wheel Info -->
             <!-- <left_joint>left_wheel_joint</left_joint> -->
