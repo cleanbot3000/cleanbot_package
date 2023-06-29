@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <include file="$(find cleanbot_package)/launch/rsp.launch"/>
+
+    <!-- argument you can pass when launching the file, example -> use_sim_time:=true -->
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="paused" default="false"/>
+
+
+
+    <!-- set use_sim_time flag -->
+    <group if="$(arg use_sim_time)">
+        <param name="/use_sim_time" value="true" />
+    </group>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find rrbot_gazebo)/worlds/rrbot.world"/>
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model cleanbot -param robot_description"/>>
+</launch>
