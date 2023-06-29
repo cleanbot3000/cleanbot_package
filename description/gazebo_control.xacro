@@ -4,36 +4,24 @@
     <gazebo>
         <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so"> 
 
-            <alwaysOn>true</alwaysOn>
-            <legacyMode>false</legacyMode>
-            <updateRate>40</updateRate>
-            <leftJoint>left_wheel_joint</leftJoint>
-            <rightJoint>right_wheel_joint</rightJoint>
-            <wheelSeparation>0.35</wheelSeparation>
-            <wheelDiameter>0.1524</wheelDiameter>
-            <torque>200</torque>
-            <commandTopic>cmd_vel</commandTopic>
-            <odometryTopic>odom</odometryTopic>
-            <odometryFrame>odom</odometryFrame>
-            <robotBaseFrame>base_link</robotBaseFrame>
             
             <!-- Wheel Info -->
-            <!-- <left_joint>left_wheel_joint</left_joint> -->
-            <!-- <right_joint>right_wheel_joint</right_joint> -->
-            <!-- <wheel_separation>0.35</wheel_separation> -->
-            <!-- <wheel_diameter>0.1524</wheel_diameter> -->
+            <left_joint>left_wheel_joint</left_joint>
+            <right_joint>right_wheel_joint</right_joint>
+            <wheel_separation>0.35</wheel_separation>
+            <wheel_diameter>0.1524</wheel_diameter>
 
             <!-- Limits -->
-            <!-- <max_wheel_torque>200</max_wheel_torque>
-            <max_wheel_acceleration>10</max_wheel_acceleration> -->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10</max_wheel_acceleration>
 
             <!-- Output -->
-            <!-- <odometry_frame>odom</odometry_frame> -->
-            <!-- <robot_base_frame>base_link</robot_base_frame> -->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
 
-            <!-- <publish_odom>true</publish_odom> -->
-            <!-- <publish_tf>true</publish_tf> -->
-            <!-- <publish_wheel_tf>true</publish_wheel_tf> -->
+            <publish_odom>true</publish_odom>
+            <publish_tf>true</publish_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
 
         </plugin>
     </gazebo>
