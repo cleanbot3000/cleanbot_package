@@ -38,10 +38,26 @@ def generate_launch_description():
                         output='screen')
 
 
+    #When launch file executed, spawners for diff_drive and joint_broad run automatically
+    #NOTE: For Ros2 Humble, use "spawner" rather than "spawner.py"
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
+
 
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
+        diff_drive_spawner,
+        joint_broad_spawner,
     ])
