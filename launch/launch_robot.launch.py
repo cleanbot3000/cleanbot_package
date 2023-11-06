@@ -30,7 +30,7 @@ def generate_launch_description():
 
     robot_description = Command(['ros2 param get --hide-type /robot_state_publisher robot_description'])
 
-    controller_params_file = os.path.join(get_package_share_directory(package_name),'config', 'my_controllers.yaml')
+    controller_params_file = os.path.join(get_package_share_directory(package_name),'config','my_controllers.yaml')
     #When launch file executed, spawners for diff_drive and joint_broad run automatically
     #NOTE: For Ros2 Humble, use "spawner" rather than "spawner.py"
     controller_manager = Node(
@@ -50,7 +50,7 @@ def generate_launch_description():
 
     delayed_diff_drive_spawner = RegisterEventHandler(
         event_handler=OnProcessStart(
-            target_action=spawn_entity,
+            target_action=controller_manager,
             on_start=[diff_drive_spawner]
         )
     )
@@ -72,7 +72,7 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        delayed_controller_manager
+        delayed_controller_manager,
         delayed_diff_drive_spawner,
         delayed_joint_broad_spawner,
     ])
