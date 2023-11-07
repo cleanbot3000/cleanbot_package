@@ -5,7 +5,7 @@ joy_node:
     deadzone: 0.05
     autorepeat_rate: 20.0
 teleop_node:
-  ros__parameters:
+  ros_parameters:
     axis_linear:  
       x: 2        # axis for throttle
     scale_linear:
