@@ -1,5 +1,10 @@
 #unbranded ps3-style gamepad with usb dongle
-teleop_twist_joy_node:
+joy_node:
+  ros_parameters:
+    device_id: 0
+    deadzone: 0.05
+    autorepeat_rate: 20.0
+teleop_node:
   ros__parameters:
     axis_linear:  
       x: 2        # axis for throttle
