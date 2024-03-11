@@ -19,7 +19,8 @@ def generate_launch_description():
         executable='teleop_node',
         name='teleop_node',
         parameters=[joy_params],
-        remappings=[('/cmd_vel', '/diff_cont/cmd_vel_unstamped')]
+        #remappings=[('/cmd_vel', '/diff_cont/cmd_vel_unstamped')]
+        remappings=[('/cmd_vel', '/diff_cont/cmd_vel_joy')] #changed for nav2, twist_mux.yaml file
     )
 
     return LaunchDescription([
