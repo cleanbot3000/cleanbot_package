@@ -8,8 +8,8 @@ teleop_twist_joy_node:
     scale_linear_turbo:
       x: 1.5
 
-    axis_angular:  #//Forward and Reverse
-      yaw: 1       # axis for turning
+    axis_linear:  #//Forward and Reverse
+      y: 1       # axis for turning
     scale_angular:
       yaw: -2.0    #used to be 0.4
     scale_angular_turbo:
